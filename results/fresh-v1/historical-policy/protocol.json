@@ -1,0 +1,22 @@
+{
+  "checkpoint_sha256": "0d21e1cd4a6e075d48acbcf7213790d0f1895125ef207082e82e48d8e4504124",
+  "environment_seeds": [
+    810001,
+    810002,
+    810003
+  ],
+  "episodes_per_seed": 100,
+  "learning": false,
+  "exploration": false,
+  "selection": "fixed input checkpoint; no selection from these evaluations",
+  "source_sha256": {
+    "validate_saved_policy.py": "051fb44c353ef88a03b8bbf1cd1d04d3aa6d94a187df57d43df2d3b919bbc957",
+    "fresh_training.py": "1494e2c98e1d6f401336957c811460be478aa93f894af9245ce2b2aae83979c4",
+    "model.py": "fa291fc8613d577b75fbfa65b50230d55438e4323a73340600dfc2804cdc4afa",
+    "maddpg_agent.py": "2a6e559cf34471e5df6353b2e6bd2a2bacb969c570ba24b02524f2f0dfcec11b"
+  },
+  "python": "3.11.15",
+  "torch": "2.5.1",
+  "numpy": "1.26.3",
+  "scope": "Fresh environment sequences for one fixed historical actor, not multiple training seeds or exact replication of the old sequence."
+}

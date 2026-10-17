@@ -1,0 +1,19 @@
+{
+ "name":"independent-tennis-training-v1",
+ "declared_date":"2026-10-17",
+ "source_base_commit":"c4a868ac65858f99fc9adb5f224263ab58b9a06e",
+ "training_seeds":[11,22,33],
+ "episodes_per_seed":1000,
+ "max_steps_per_episode":10000,
+ "validation_every_episodes":100,
+ "validation_episodes":20,
+ "validation_environment_seed_offset":100000,
+ "test_environment_seed_offset":900000,
+ "test_episodes":100,
+ "checkpoint_selection":"highest independent validation episode-score mean; first maximum wins; never final test scores",
+ "evaluation_policies":["learned","random","zero"],
+ "episode_score":"maximum of the two undiscounted agent returns",
+ "device":"cpu",
+ "torch_threads":1,
+ "limits":"Fresh bounded training, distinct from historical seed 0. Same environment initialization seed per policy comparison does not force identical trajectories. Legacy Unity seed handling and cross-platform simulation determinism are not independently guaranteed. Evaluation disables exploration and learning. Report every seed including failed training. No result is inferred from generated transition tests or saved historical scores."
+}

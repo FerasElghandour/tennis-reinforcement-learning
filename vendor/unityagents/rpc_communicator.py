@@ -15,7 +15,11 @@ logger = logging.getLogger("unityagents")
 
 
 class UnityToExternalServicerImplementation(UnityToExternalServicer):
-    parent_conn, child_conn = Pipe()
+    # Modified by Feras Elghandour, 2026-10-17: each environment owns its pipe.
+    # Class-level endpoints were shared by training and validation environments;
+    # closing one environment consequently closed every later instance's handle.
+    def __init__(self):
+        self.parent_conn, self.child_conn = Pipe()
 
     def Initialize(self, request, context):
         self.child_conn.send(request)
@@ -67,6 +71,8 @@ class RpcCommunicator(Communicator):
         message.header.status = 200
         message.unity_input.CopyFrom(inputs)
         self.unity_to_external.parent_conn.send(message)
+        if not self.unity_to_external.parent_conn.poll(30):
+            raise UnityTimeOutException('Unity initialization acknowledgement timed out after 30 seconds.')
         self.unity_to_external.parent_conn.recv()
         return aca_param
 
@@ -75,6 +81,8 @@ class RpcCommunicator(Communicator):
         message.header.status = 200
         message.unity_input.CopyFrom(inputs)
         self.unity_to_external.parent_conn.send(message)
+        if not self.unity_to_external.parent_conn.poll(30):
+            raise UnityTimeOutException('Unity step response timed out after 30 seconds.')
         output = self.unity_to_external.parent_conn.recv()
         if output.header.status != 200:
             return None
@@ -84,13 +92,19 @@ class RpcCommunicator(Communicator):
         """
         Sends a shutdown signal to the unity environment, and closes the grpc connection.
         """
-        if self.is_open:
-            message_input = UnityMessage()
-            message_input.header.status = 400
-            self.unity_to_external.parent_conn.send(message_input)
-            self.unity_to_external.parent_conn.close()
-            self.server.stop(False)
+        try:
+            if self.is_open:
+                message_input = UnityMessage()
+                message_input.header.status = 400
+                self.unity_to_external.parent_conn.send(message_input)
+        finally:
             self.is_open = False
+            if self.server is not None:
+                self.server.stop(0).wait(timeout=5)
+                self.server = None
+            if self.unity_to_external is not None:
+                self.unity_to_external.parent_conn.close()
+                self.unity_to_external.child_conn.close()
 
 
 

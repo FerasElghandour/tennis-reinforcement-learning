@@ -17,6 +17,10 @@ The included records contain 875 training episodes and a separate 100-episode ev
 
 The independent audit recomputes score identities and truncation-aware windows. Its circular block-bootstrap interval describes the saved evaluation sequence. It does not estimate variance across independently trained policies.
 
+## New local validation
+
+The historical actor completed 300 fresh episodes over three new environment initialization seeds, mean 2.1729. This is one fixed historically trained policy. Six additional independent training runs compare the released baseline with one exploratory warmup/noise alternative under separate validation and final tests. [Complete results and limits](results/fresh-v1/RESULTS.md).
+
 ## Inference and export validation
 
 Tests load the actual included actor checkpoint, check batches of 1, 2 and 5, verify finite bounded actions, and compare an exported graph against the actor on new test observations. Export batch bounds are 1–1,024. An interface/hash manifest accompanies each export.
@@ -39,4 +43,4 @@ cp -R run-seed-0 run-local-evaluation
 python Tennis.py --mode evaluate --env Tennis_Linux_NoVis/Tennis.x86_64 --out run-local-evaluation --eval-episodes 100
 ```
 
-Use `--mode train --out run-new-training` for a separate training run. The optional historical training target of 0.75 was not reached. The environment was not rerun as part of the current code improvements.
+Use `--mode train --out run-new-training` for a separate training run. The optional historical training target of 0.75 was not reached. The new Mac/Rosetta campaign and reference commands are recorded separately in `results/fresh-v1/RESULTS.md`. The historical Linux setup above is not the newly executed Mac reference.

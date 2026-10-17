@@ -1,0 +1,95 @@
+{
+  "per_seed": [
+    {
+      "seed": 11,
+      "training_episodes": 1000,
+      "positive_score_episodes": 1,
+      "positive_score_episode_fraction": 0.001,
+      "zero_score_episode_fraction": 0.999,
+      "mean_episode_steps": 14.238,
+      "median_episode_steps": 14.0,
+      "best_rolling_100_training_mean": 0.0010000000149011613,
+      "final_rolling_100_training_mean": 0.0,
+      "selected_episode": 100,
+      "validation_mean": 0.0,
+      "evaluation": {
+        "learned": {
+          "mean_score": 0.0,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "random": {
+          "mean_score": 0.012500000204890966,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "zero": {
+          "mean_score": 0.0027000001072883606,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "training_episodes": 1000,
+      "positive_score_episodes": 42,
+      "positive_score_episode_fraction": 0.042,
+      "zero_score_episode_fraction": 0.958,
+      "mean_episode_steps": 15.184,
+      "median_episode_steps": 14.0,
+      "best_rolling_100_training_mean": 0.01840000029653311,
+      "final_rolling_100_training_mean": 0.004000000059604645,
+      "selected_episode": 700,
+      "validation_mean": 0.020000000298023225,
+      "evaluation": {
+        "learned": {
+          "mean_score": 0.012000000178813934,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "random": {
+          "mean_score": 0.015900000240653755,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "zero": {
+          "mean_score": 0.004700000137090683,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "training_episodes": 1000,
+      "positive_score_episodes": 0,
+      "positive_score_episode_fraction": 0.0,
+      "zero_score_episode_fraction": 1.0,
+      "mean_episode_steps": 14.201,
+      "median_episode_steps": 14.0,
+      "best_rolling_100_training_mean": 0.0,
+      "final_rolling_100_training_mean": 0.0,
+      "selected_episode": 100,
+      "validation_mean": 0.0,
+      "evaluation": {
+        "learned": {
+          "mean_score": 0.0,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "random": {
+          "mean_score": 0.014300000257790088,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        },
+        "zero": {
+          "mean_score": 0.001900000050663948,
+          "median_score": 0.0,
+          "truncated_episodes": 0
+        }
+      }
+    }
+  ],
+  "scope": "All predeclared training seeds. Positive-score episode fraction describes observed reward sparsity, not per-transition reward density. No hyperparameters or checkpoints are chosen from these final evaluations."
+}

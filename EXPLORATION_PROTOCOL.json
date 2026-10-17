@@ -1,0 +1,19 @@
+{
+ "name":"tennis-exploration-followup-v1",
+ "declared_date":"2026-10-17",
+ "motivation":"The completed baseline campaign had sparse positive training episodes and poor held-out returns.",
+ "training_seeds":[11,22,33],
+ "episodes_per_seed":1000,
+ "uniform_random_warmup_environment_steps":2000,
+ "ou_sigma_after_warmup":0.3,
+ "other_learning_hyperparameters":"unchanged released shared-policy DDPG implementation",
+ "validation_every_episodes":100,
+ "validation_episodes":20,
+ "validation_environment_seed_offset":100000,
+ "test_environment_seed_offset":950000,
+ "test_episodes":100,
+ "max_steps_per_episode":10000,
+ "checkpoint_selection":"maximum validation mean, first tie; validation seeds are development inputs already seen in baseline campaign",
+ "final_comparison":"exploration-selected policy, frozen baseline-selected policy, random and zero; same fresh test environment seed per training-seed group",
+ "limits":"This exploratory protocol was chosen after inspecting baseline results. Its 950000-offset test seed family is new and frozen before exploration training. The comparison is descriptive over three paired training seeds, not a general algorithm-superiority claim. Both protocols receive 1000 training episodes, but their step counts and compute can differ. No hyperparameters are changed in response to these new final scores."
+}

@@ -1,0 +1,1662 @@
+[
+  {
+    "training_episode": 100,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 200,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 300,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 400,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 500,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 600,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 700,
+    "mean_score": 0.020000000298023225,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.10000000149011612,
+        "episode_score": 0.10000000149011612,
+        "steps": 32,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": 0.10000000149011612,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.10000000149011612,
+        "steps": 31,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": 0.10000000149011612,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.10000000149011612,
+        "steps": 31,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": 0.10000000149011612,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.10000000149011612,
+        "steps": 31,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 800,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 900,
+    "mean_score": 0.014500000234693288,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": -0.019999999552965164,
+        "agent_1_return": 0.10000000149011612,
+        "episode_score": 0.10000000149011612,
+        "steps": 33,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.10000000149011612,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.10000000149011612,
+        "steps": 29,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 16,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": 0.09000000171363354,
+        "episode_score": 0.09000000171363354,
+        "steps": 29,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "training_episode": 1000,
+    "mean_score": 0.0,
+    "episodes": [
+      {
+        "episode": 1,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 2,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 3,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 4,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 5,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 6,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 7,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 8,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 9,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 10,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 11,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 12,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 13,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 14,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 15,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      },
+      {
+        "episode": 16,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 17,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 18,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 19,
+        "agent_0_return": 0.0,
+        "agent_1_return": -0.009999999776482582,
+        "episode_score": 0.0,
+        "steps": 14,
+        "truncated": false
+      },
+      {
+        "episode": 20,
+        "agent_0_return": -0.009999999776482582,
+        "agent_1_return": 0.0,
+        "episode_score": 0.0,
+        "steps": 15,
+        "truncated": false
+      }
+    ]
+  }
+]

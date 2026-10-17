@@ -1,0 +1,8 @@
+{
+  "training_policies": 6,
+  "audited_episode_records": 9300,
+  "score_identity_and_budgets": true,
+  "validation_only_first_maximum_selection": true,
+  "actor_fingerprints": true,
+  "limits": "Offline record/selection audit, not another simulator run or proof of cross-platform determinism."
+}

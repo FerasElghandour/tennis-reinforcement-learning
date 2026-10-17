@@ -1,0 +1,23 @@
+[
+  {
+    "environment_seed": 810001,
+    "episodes": 100,
+    "mean_score": 2.0597000307030977,
+    "median_score": 2.600000038743019,
+    "truncated_episodes": 0
+  },
+  {
+    "environment_seed": 810002,
+    "episodes": 100,
+    "mean_score": 2.3229000346176325,
+    "median_score": 2.650000039488077,
+    "truncated_episodes": 0
+  },
+  {
+    "environment_seed": 810003,
+    "episodes": 100,
+    "mean_score": 2.13600003182888,
+    "median_score": 2.600000038743019,
+    "truncated_episodes": 0
+  }
+]

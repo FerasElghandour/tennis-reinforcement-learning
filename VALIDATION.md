@@ -1,24 +1,15 @@
 # Methods and validation
 
-## Automated checks
-
-The test suite currently contains **20 tests**. It covers malformed score records, truncation handling, full-window scoring, block resampling, replay ownership, independent rngs, invalid transitions, mode-preserving inference, learning gradients, checkpoint batches and exported-policy parity.
+The 28-test suite covers score identities, truncation-aware windows, block resampling, replay ownership, independent random generators, invalid transitions, mode-preserving inference and exported-policy parity. New numerical oracles check hand-computed DDPG targets, terminal masking, actor gradients, Polyak updates and BatchNorm buffers. Legacy-client checks protect per-instance pipes, bounded waits and complete shutdown. Exploration fixtures check seeded warmup and preservation of the training budget during evaluation.
 
 ```sh
 python -m pip install -e ".[agent,dev]"
 python -m pytest -q
+python verify_fresh_results.py --results results/fresh-v1
 ```
 
-Tests use small synthetic fixtures to isolate failure cases. They are not performance benchmarks. The checked-in report is generated from the historical project data and records its own input hashes, code hashes and exact dependency versions in `docs/metrics.json`. A consistency test rejects a report whose recorded implementation hashes differ from the current source.
+Fixtures isolate correctness; they are not performance benchmarks. The [fresh campaign](results/fresh-v1/RESULTS.md) separately reports six complete training runs, validation-only selection, held-out policy/baseline comparisons and all raw records. Its offline audit checks scores, counts, checkpoint selection and actor fingerprints. The historical saved actor's 300 new episodes evaluate one policy, not three training seeds.
 
-## Report checks
+The original interactive report remains generated from the original historical data and records implementation/input hashes in `docs/metrics.json`. It is a historical view, while the new campaign has its own result page. Browser checks of that existing report cover desktop/mobile tables and downloads.
 
-All comparison selectors, numerical tables and CSV downloads are checked in a browser at desktop and mobile widths. Reports use self-contained HTML, SVG and embedded aggregate JSON. The chart scrolls inside its own region on narrow screens. No external scripts or raw restricted datasets are loaded.
-
-## Evaluation scope
-
-The critic uses each agent’s local observation and action. The legacy class name `MADDPGAgent` does not imply a centralized critic. Scores come from one historical training seed and one evaluation sequence. The block-bootstrap interval is conditional on that sequence, not a multi-seed performance guarantee. Engineering updates have not been presented as a new environment benchmark.
-
-## Reproduction boundaries
-
-The current execution record uses Python 3.14.3 and the dependency versions saved alongside the results. Automated repository checks also target Python 3.11 and 3.12. Floating-point values and model outputs may vary by library/runtime version. External source files can change; compare input fingerprints before interpreting a difference as an implementation regression.
+The fresh Mac Unity reference uses Python 3.11.15, Torch 2.5.1, NumPy 1.26.3, protobuf 3.20.3, gRPC 1.84.0 and the official Intel simulator under Rosetta. Exact source archives and dependency snapshots accompany the results. An earlier native transport failure is retained explicitly. The critic uses local state/action observations, not centralized joint observations. Simulation results do not establish real-world control safety or cross-platform determinism.

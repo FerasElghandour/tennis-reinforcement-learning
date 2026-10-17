@@ -1,0 +1,100 @@
+{
+  "models": {
+    "baseline": {
+      "learned": {
+        "mean": 0.004000000059604645,
+        "sample_sd": 0.006928203333513782,
+        "per_seed": [
+          0.0,
+          0.012000000178813934,
+          0.0
+        ]
+      },
+      "random": {
+        "mean": 0.01423333356777827,
+        "sample_sd": 0.0017009801281803942,
+        "per_seed": [
+          0.012500000204890966,
+          0.015900000240653755,
+          0.014300000257790088
+        ]
+      },
+      "zero": {
+        "mean": 0.0031000000983476637,
+        "sample_sd": 0.0014422205502741293,
+        "per_seed": [
+          0.0027000001072883606,
+          0.004700000137090683,
+          0.001900000050663948
+        ]
+      }
+    },
+    "exploration": {
+      "exploration": {
+        "mean": 0.7292666775360703,
+        "sample_sd": 1.2631269377594225,
+        "per_seed": [
+          2.187800032608211,
+          0.0,
+          0.0
+        ]
+      },
+      "frozen_baseline": {
+        "mean": 0.00560000008593003,
+        "sample_sd": 0.00969948467122089,
+        "per_seed": [
+          0.0,
+          0.01680000025779009,
+          0.0
+        ]
+      },
+      "random": {
+        "mean": 0.019666666990766923,
+        "sample_sd": 0.0026950572354289626,
+        "per_seed": [
+          0.019100000336766242,
+          0.022600000351667406,
+          0.01730000028386712
+        ]
+      },
+      "zero": {
+        "mean": 0.0028000000864267347,
+        "sample_sd": 0.0009539392250041443,
+        "per_seed": [
+          0.0018000000715255738,
+          0.002900000065565109,
+          0.0037000001221895217
+        ]
+      }
+    }
+  },
+  "historical_policy": {
+    "sequences": [
+      {
+        "environment_seed": 810001,
+        "episodes": 100,
+        "mean_score": 2.0597000307030977,
+        "median_score": 2.600000038743019,
+        "truncated_episodes": 0
+      },
+      {
+        "environment_seed": 810002,
+        "episodes": 100,
+        "mean_score": 2.3229000346176325,
+        "median_score": 2.650000039488077,
+        "truncated_episodes": 0
+      },
+      {
+        "environment_seed": 810003,
+        "episodes": 100,
+        "mean_score": 2.13600003182888,
+        "median_score": 2.600000038743019,
+        "truncated_episodes": 0
+      }
+    ],
+    "mean_of_sequence_means": 2.17286669904987,
+    "wall_seconds": 548.1430967079978,
+    "scope": "Fresh environment sequences for one fixed historical actor, not multiple training seeds or exact replication of the old sequence."
+  },
+  "limits": "Three independently trained policies per training protocol; same training seeds and fresh final test family for exploration/frozen-baseline comparison. Descriptive, exploratory, different environment-step counts."
+}

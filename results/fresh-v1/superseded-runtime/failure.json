@@ -1,0 +1,11 @@
+{
+  "exit_code": 134,
+  "native_message": "libc++abi: Pure virtual function called!",
+  "completed_training_seeds": [
+    11
+  ],
+  "training_episodes_seed11": 1000,
+  "final_evaluation_results_written": false,
+  "grpcio": "1.58.0",
+  "recovery": "Retain this attempt; rerun fixed protocols under grpcio1.84 with bounded communicator and clean shutdown."
+}
