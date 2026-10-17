@@ -1,0 +1,10 @@
+{
+  "seed": 0,
+  "state_size": 24,
+  "action_size": 2,
+  "agents": 2,
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.3",
+  "python": "3.11.0rc1",
+  "environment": "../Tennis_Linux_NoVis/Tennis.x86_64"
+}

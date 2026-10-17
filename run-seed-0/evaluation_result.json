@@ -1,0 +1,6 @@
+{
+  "episodes": 100,
+  "mean_score": 2.0670000308007004,
+  "threshold_met": true,
+  "exploration": false
+}

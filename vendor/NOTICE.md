@@ -1,0 +1,1 @@
+Legacy Unity ML-Agents client copied unchanged from the Udacity project workspace, unityagents and communicator_objects directories. Original project: https://github.com/Unity-Technologies/ml-agents . Copyright Unity Technologies; Apache 2.0. This client implements the v0.4 API required by the supplied Tennis environment.

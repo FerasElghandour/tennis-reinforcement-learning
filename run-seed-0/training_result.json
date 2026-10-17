@@ -1,0 +1,15 @@
+{
+  "completed_training_episodes": 875,
+  "first_solved_episode": 607,
+  "first_solved_mean_100": 0.5100000076554716,
+  "saved_checkpoint_episode": 634,
+  "saved_checkpoint_training_mean_100": 0.5338000080175698,
+  "solved": true,
+  "termination": "Stopped after 875 episodes; best checkpoint independently evaluated",
+  "evaluation": {
+    "episodes": 100,
+    "mean_score": 2.0670000308007004,
+    "threshold_met": true,
+    "exploration": false
+  }
+}
