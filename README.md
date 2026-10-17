@@ -1,31 +1,70 @@
 # Shared-Policy Continuous Control
 
-A two-agent DDPG implementation with saved policies, independently audited score records, reproducibility fixes and portable CPU inference.
+Train a shared continuous-control policy for two Tennis players, with a local critic, replay learning and portable saved-policy inference.
 
 **[Open the interactive report](https://feraselghandour.github.io/tennis-reinforcement-learning/)** · [Architecture](ARCHITECTURE.md) · [Methods and validation](VALIDATION.md)
 
 [![Quality checks](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml/badge.svg)](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml)
 
-## What the evidence shows
+## How training works
 
-The saved policy achieved a **2.067 mean score over 100 historical evaluation episodes**, with learning and exploration disabled. This is the evaluation mean, not the height of the training curve.
+Both players share one actor, one local critic and one replay buffer. The actor maps each player’s 24-value observation to two bounded actions. Sampled transitions train the critic against target-network estimates, then update the actor to maximize the critic’s estimate. Targets follow soft updates with τ = 0.01.
 
-The training record contains 875 episodes. Metadata identifies the saved checkpoint at episode 634, where the rolling 100-episode training mean is 0.5338. Training continued afterward and regressed. The two records answer different questions: how learning progressed, and how the saved policy performed under evaluation.
+<picture>
+  <source media="(max-width: 760px)" srcset="assets/shared-policy-mechanism-mobile.svg">
+  <img src="assets/shared-policy-mechanism.svg" alt="Two Tennis players share an actor and local critic. Their transitions enter a shared replay buffer; minibatches update critic and actor, followed by soft target updates.">
+</picture>
 
-| Measure | Result |
-|---|---|
-| Recorded training episodes | 875 |
-| First qualifying 100-episode window | Ends at episode 607 |
-| Saved checkpoint | Episode 634; rolling training mean 0.5338 |
-| Saved-policy evaluation | 100 episodes; mean score 2.067 |
-| Sequence-level block-bootstrap interval | 1.758–2.349; blocks of ten episodes |
-| Policy interface | 24 input features → 2 bounded continuous actions |
+[Actor and critic code](src/tennis_control/model.py) · [Replay and learning updates](src/tennis_control/maddpg_agent.py). The critic uses a single player’s observation/action pair; it is not centralized over both players.
 
-The interactive report includes selectable comparisons, a matching numerical table, CSV/JSON downloads and the reproducibility record. It also works offline: download `docs/index.html` and open it in a browser.
+## Try the saved policy on CPU
 
-[![Training rolling mean over 875 episodes with saved checkpoint 634 marked, alongside 100 evaluation scores with mean 2.067. Separate axes and scales.](https://feraselghandour.github.io/assets/tennis-results.svg)](https://feraselghandour.github.io/assets/tennis-results.svg)
+Use Python 3.11 or later:
 
-Training uses a rolling mean; evaluation shows individual episode scores and their mean. The axes have different scales. [Training CSV](run-seed-0/training_scores.csv) · [Evaluation CSV](run-seed-0/evaluation_scores.csv) · [Checkpoint metadata](run-seed-0/training_result.json). Both sequences use the same episode-score definition. One historical training seed does not establish multi-seed reliability.
+```sh
+git clone https://github.com/FerasElghandour/tennis-reinforcement-learning.git
+cd tennis-reinforcement-learning
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -e ".[agent]"
+python examples/policy_demo.py
+```
+
+The supplied [synthetic observation fixture](examples/observations.json) has shape `[2, 24]`: one zero vector and one fixed signed-value vector. The saved actor returns two bounded actions for each row. Example action output:
+
+```json
+{"actions": [[-0.69705, -0.982914], [-0.621963, -0.939908]]}
+```
+
+[Complete observed output](examples/policy_demo-output.json) · [Example environment](examples/environment.json). Floating-point values may vary slightly across versions. These inputs demonstrate the interface; they are not recorded environment states, a Unity rollout or a performance evaluation.
+
+To use your own valid observation array:
+
+```sh
+tennis-policy --checkpoint run-seed-0/checkpoint_actor.pth --observations examples/observations.json
+```
+
+## Try a learning update
+
+```sh
+python examples/learn_step.py
+```
+
+This generates transitions for two players and exercises the implemented replay, critic, actor and target-update path on CPU. The output reports **128 replay transitions**, `actor_weights_changed: true`, and finite actor/critic losses. [Observed output](examples/learn_step-output.json).
+
+This is a synthetic optimization example. Training or evaluating actual Tennis behavior requires the separately acquired legacy Unity environment and the setup in [MODEL_CARD.md](MODEL_CARD.md).
+
+## Historical training and evaluation
+
+The recorded training sequence spans 875 episodes. Metadata identifies checkpoint 634, where the rolling 100-episode training mean is 0.5338. That saved policy has a **2.067 mean score over 100 evaluation episodes**, with learning and exploration disabled. Training continued afterward and regressed.
+
+[![Training rolling mean with checkpoint 634 marked, alongside saved-policy evaluation scores and their 2.067 mean. Separate scales.](https://feraselghandour.github.io/assets/tennis-results.svg)](https://feraselghandour.github.io/assets/tennis-results.svg)
+
+Left: rolling training mean. Right: individual evaluation scores and their mean. [Training CSV](run-seed-0/training_scores.csv) · [Evaluation CSV](run-seed-0/evaluation_scores.csv) · [Checkpoint metadata](run-seed-0/training_result.json).
+
+The first qualifying 100-episode training window ends at episode 607. The evaluation’s sequence-level block-bootstrap interval is 1.758–2.349 using blocks of ten episodes. These records describe one historical training seed and one evaluation sequence, not multi-seed reliability. Both use the same episode-score definition.
+
+The [interactive report](https://feraselghandour.github.io/tennis-reinforcement-learning/) includes selectable views, a numerical table and CSV/JSON downloads. Download `docs/index.html` to inspect it offline.
 
 ## Engineering
 
@@ -52,18 +91,13 @@ The score records are included. The audit runs without Torch or Unity. Install t
 
 Each run writes `index.html` and `metrics.json` to the chosen output directory. The JSON records the measured results, input SHA-256 fingerprints, source-code fingerprints, dependency versions and analytical settings. To use the notebooks, install the optional `notebooks` dependencies.
 
-## Run the saved policy
+## Export the saved actor
 
 ```sh
-python -m pip install -e ".[agent,dev]"
-tennis-policy --checkpoint run-seed-0/checkpoint_actor.pth --observations observations.json
 tennis-policy --checkpoint run-seed-0/checkpoint_actor.pth --export exports/actor.pt2
-python verify_agent.py
 ```
 
-`observations.json` must contain environment observations as a JSON array with shape `[batch, 24]`. The output has two actions per observation, each in `[-1, 1]`. The export includes interface metadata and source/artifact hashes. Exported programs are framework-version dependent; validate parity in the intended runtime.
-
-For new environment runs, use the separate legacy Linux/Python 3.11 setup in [MODEL_CARD.md](MODEL_CARD.md). The environment binary is acquired separately.
+The export includes interface metadata and artifact hashes. Exported programs depend on the framework version; validate parity in the intended runtime.
 
 ## Interpretation
 
@@ -77,4 +111,5 @@ The critic uses each agent’s local observation and action. The legacy class na
 
 **Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)  
 Data sources and applicable license notices: [DATA.md](DATA.md).
+
 

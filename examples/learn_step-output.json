@@ -1,0 +1,11 @@
+{
+  "scope": "synthetic transition training example; not a Unity rollout",
+  "device": "cpu",
+  "replay_transitions": 128,
+  "minibatch_size": 128,
+  "actor_weights_changed": true,
+  "last_losses": {
+    "actor": -0.096198,
+    "critic": 0.002926
+  }
+}

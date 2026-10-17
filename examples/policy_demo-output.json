@@ -1,0 +1,21 @@
+{
+  "scope": "CPU inference on synthetic inputs; not a Unity rollout or evaluation",
+  "observations_shape": [
+    2,
+    24
+  ],
+  "actions_shape": [
+    2,
+    2
+  ],
+  "actions": [
+    [
+      -0.69705,
+      -0.982914
+    ],
+    [
+      -0.621963,
+      -0.939908
+    ]
+  ]
+}
