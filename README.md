@@ -1,24 +1,40 @@
-# Tennis with Shared-Policy DDPG
+# Multi-Agent Tennis Control
 
-Train two agents in the Udacity Tennis environment using one shared actor, critic and replay buffer.
+Train two agents to sustain a rally through continuous movement and jumping actions. The implementation combines a shared actor, critic and replay buffer with explicit training records and a separate evaluation of the saved policy.
 
-## Completion
+**Python · PyTorch · NumPy · Unity ML-Agents · Matplotlib**
 
-Udacity project: **Collaboration and Competition**. Passed on **2026-10-06**, verified against the authenticated Udacity project-pass email. The receipt is kept privately.
+![Training episode returns and the complete 100-episode rolling mean](run-seed-0/scores.png)
 
-This is a cleaned portfolio edition of the recovered implementation associated with that project. Udacity's email confirms the project passed; it does not certify this Git commit or identify the accepted archive by hash.
+## Results
 
-## Approach
+| Measure | Result |
+|---|---|
+| Recorded training episodes | 875 |
+| First 100-episode window meeting the 0.5 score threshold | Episode 607; mean 0.510 |
+| Saved-policy evaluation | 100 episodes; mean score 2.067 |
+| Evaluation settings | Exploration and learning disabled |
 
-Each agent uses its local 24-dimensional stacked observation and two continuous actions. Experience is pooled for DDPG updates. Despite the legacy class name `MADDPGAgent`, this implementation has no centralized critic and is not centralized-critic MADDPG.
+## Implementation
 
-## Recorded results
+- Implemented DDPG with experience replay, target networks, soft updates and exploration noise.
+- Shared the policy across agents while keeping each critic input local to an agent’s observation and action.
+- Logged episode returns, full 100-episode reward windows, checkpoints and evaluation results.
+- Added a learning smoke test covering bounded actions, target gradients and policy save/load equivalence.
 
-Saved training records contain 875 episodes. The first qualifying 100-episode window ends at episode 607 with mean score 0.510000. A separate 100-episode evaluation of the saved policy, without exploration or learning, has mean score 2.067000. These are records from one seed, not a multi-seed benchmark.
+## Practical relevance
 
-These figures come from saved execution records. Release validation is described in `VALIDATION.md`.
+Demonstrates reinforcement learning for continuous control, model checkpointing and reproducible evaluation. The same engineering disciplines support simulation-based policy experiments and autonomous-control research.
 
-## Run
+## Explore the project
+
+- `model.py` and `maddpg_agent.py` — actor, critic and learning implementation.
+- `Tennis.py` — probing, training and evaluation.
+- `verify_agent.py` — learning and checkpoint smoke test.
+- `run-seed-0/` — saved policies, score records and training curve.
+- `Report.md` — algorithm, architecture and experiment detail.
+
+## Run locally
 
 Use Linux and Python 3.11 for the historical environment setup.
 
@@ -40,14 +56,13 @@ python Tennis.py --mode evaluate --env Tennis_Linux_NoVis/Tennis.x86_64 --out ru
 
 The copied output folder preserves the published evaluation records. To train a new policy, use `--mode train --out run-new-training`. See `Tennis.py --help` for the remaining arguments. Saved actor/critic weights and the score CSVs are included in `run-seed-0/`.
 
-See [DATA.md](DATA.md) for inputs, attribution and excluded materials. Source, saved score records and model checkpoints are included; the environment binary is obtained separately.
+See [DATA.md](DATA.md) for required inputs and [VALIDATION.md](VALIDATION.md) for the checks and runtime versions.
 
-## Limitations
+## Scope
 
-The legacy Unity v0.4 client and supplied environment binary are required. The historical run used the Udacity Linux workspace, Python 3.11.0rc1 and CPU PyTorch 2.5.1. Other platforms have not been validated with the environment. The optional 0.75 training target was not reached.
+Results come from one seed and one evaluation sequence. The architecture is shared-policy DDPG; the legacy class name `MADDPGAgent` does not imply a centralized critic. The historical environment run used Linux and the legacy Unity v0.4 protocol.
 
-## Provenance and rights
+---
 
-Prepared by Mohamed Feras Elghandour with AI assistance in implementation, debugging, analysis and documentation. This repository does not claim unaided coding or production deployment. Udacity supplied the educational context; third-party tools and inputs retain their own rights. Course lesson text, assessment prompts, rubrics, answer keys, pass-email bodies and authenticated classroom captures are excluded.
-
-No new repository-wide software license is granted in this release. Existing third-party license notices remain applicable; see [DATA.md](DATA.md) and any `third_party/` or `vendor/` notices. This is an educational portfolio project, without a claim of Udacity endorsement.
+**Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)  
+[Attribution and development notes](ATTRIBUTION.md)
