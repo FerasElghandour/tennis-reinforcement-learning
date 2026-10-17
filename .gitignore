@@ -17,3 +17,10 @@ Tennis_Linux_NoVis/
 *.zip
 run-local-evaluation/
 run-new-training/
+
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+reports/
+exports/

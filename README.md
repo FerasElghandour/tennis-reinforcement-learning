@@ -1,67 +1,76 @@
-# Multi-Agent Tennis Control
+# Shared-Policy Continuous Control
 
-Train two agents to sustain a rally through continuous movement and jumping actions. The implementation combines a shared actor, critic and replay buffer with explicit training records and a separate evaluation of the saved policy.
+A two-agent DDPG implementation with saved policies, independently audited score records, reproducibility fixes and portable CPU inference.
 
-**Python · PyTorch · NumPy · Unity ML-Agents · Matplotlib**
+**[Open the interactive report](https://feraselghandour.github.io/tennis-reinforcement-learning/)** · [Architecture](ARCHITECTURE.md) · [Methods and validation](VALIDATION.md)
 
-![Training episode returns and the complete 100-episode rolling mean](run-seed-0/scores.png)
+[![Quality checks](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml/badge.svg)](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml)
 
-## Results
+## What the evidence shows
+
+The saved policy achieved a **2.067 mean score over 100 evaluation episodes** with learning and exploration disabled. The score audit independently validates the episode definition and the full-window solving criterion.
 
 | Measure | Result |
 |---|---|
 | Recorded training episodes | 875 |
-| First 100-episode window meeting the 0.5 score threshold | Episode 607; mean 0.510 |
+| First qualifying 100-episode window | Ends at episode 607 |
 | Saved-policy evaluation | 100 episodes; mean score 2.067 |
-| Evaluation settings | Exploration and learning disabled |
+| Sequence-level block-bootstrap interval | 1.758–2.349; blocks of ten episodes |
+| Policy interface | 24 input features → 2 bounded continuous actions |
 
-## Implementation
+The interactive report includes selectable comparisons, a matching numerical table, CSV/JSON downloads and the reproducibility record. It also works offline: download `docs/index.html` and open it in a browser.
 
-- Implemented DDPG with experience replay, target networks, soft updates and exploration noise.
-- Shared the policy across agents while keeping each critic input local to an agent’s observation and action.
-- Logged episode returns, full 100-episode reward windows, checkpoints and evaluation results.
-- Added a learning smoke test covering bounded actions, target gradients and policy save/load equivalence.
+[![Interactive evidence report](assets/report-preview.png)](https://feraselghandour.github.io/tennis-reinforcement-learning/)
 
-## Practical relevance
+## Engineering
 
-Demonstrates reinforcement learning for continuous control, model checkpointing and reproducible evaluation. The same engineering disciplines support simulation-based policy experiments and autonomous-control research.
+- Strict transition and observation validation before replay mutation.
+- Independent random generators for exploration noise and replay sampling; replay stores defensive copies.
+- Inference preserves the model’s train/evaluation mode; learning records finite actor/critic losses.
+- A separate score-audit CLI and CPU policy inference/export CLI, without requiring Unity for those tasks.
 
-## Explore the project
+The implementation is packaged under `src/tennis_control/`; `Report.md` contains the algorithm and historical experiment detail. Small root-level entry points preserve existing commands.
 
-- `model.py` and `maddpg_agent.py` — actor, critic and learning implementation.
-- `Tennis.py` — probing, training and evaluation.
-- `verify_agent.py` — learning and checkpoint smoke test.
-- `run-seed-0/` — saved policies, score records and training curve.
-- `Report.md` — algorithm, architecture and experiment detail.
+## Reproduce
 
-## Run locally
-
-Use Linux and Python 3.11 for the historical environment setup.
+Use Python 3.11 or later and a separate virtual environment for this repository.
 
 ```sh
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -r requirements.txt
+python -m pip install -e ".[dev]"
+python -m tennis_control --run run-seed-0 --output reports
+python -m pytest -q
+```
+
+The score records are included. The audit runs without Torch or Unity. Install the optional agent dependencies for policy inference and export; see below.
+
+Each run writes `index.html` and `metrics.json` to the chosen output directory. The JSON records the measured results, input SHA-256 fingerprints, source-code fingerprints, dependency versions and analytical settings. To use the notebooks, install the optional `notebooks` dependencies.
+
+## Run the saved policy
+
+```sh
+python -m pip install -e ".[agent,dev]"
+tennis-policy --checkpoint run-seed-0/checkpoint_actor.pth --observations observations.json
+tennis-policy --checkpoint run-seed-0/checkpoint_actor.pth --export exports/actor.pt2
 python verify_agent.py
 ```
 
-Download and extract the official environment separately, then:
+`observations.json` must contain environment observations as a JSON array with shape `[batch, 24]`. The output has two actions per observation, each in `[-1, 1]`. The export includes interface metadata and source/artifact hashes. Exported programs are framework-version dependent; validate parity in the intended runtime.
 
-```sh
-python Tennis.py --mode probe --env Tennis_Linux_NoVis/Tennis.x86_64
-cp -R run-seed-0 run-local-evaluation
-python Tennis.py --mode evaluate --env Tennis_Linux_NoVis/Tennis.x86_64 --out run-local-evaluation --eval-episodes 100
-```
+For new environment runs, use the separate legacy Linux/Python 3.11 setup in [MODEL_CARD.md](MODEL_CARD.md). The environment binary is acquired separately.
 
-The copied output folder preserves the published evaluation records. To train a new policy, use `--mode train --out run-new-training`. See `Tennis.py --help` for the remaining arguments. Saved actor/critic weights and the score CSVs are included in `run-seed-0/`.
+## Interpretation
 
-See [DATA.md](DATA.md) for required inputs and [VALIDATION.md](VALIDATION.md) for the checks and runtime versions.
+The critic uses each agent’s local observation and action. The legacy class name `MADDPGAgent` does not imply a centralized critic. Scores come from one historical training seed and one evaluation sequence. The block-bootstrap interval is conditional on that sequence, not a multi-seed performance guarantee. Engineering updates have not been presented as a new environment benchmark.
 
-## Scope
+## Portfolio
 
-Results come from one seed and one evaluation sequence. The architecture is shared-policy DDPG; the legacy class name `MADDPGAgent` does not imply a centralized critic. The historical environment run used Linux and the legacy Unity v0.4 protocol.
+- [Weather-Aware Bike-Share Demand Analysis](https://github.com/FerasElghandour/bikeshare-weather-analysis)
+- [Bike-Share Customer Behavior](https://github.com/FerasElghandour/bikeshare-customer-behavior)
+- [Movie Revenue: Selection, Sensitivity & Uncertainty](https://github.com/FerasElghandour/movie-revenue-analysis)
 
 ---
 
-**Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)
+**Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)  
+Data sources and applicable license notices: [DATA.md](DATA.md).
