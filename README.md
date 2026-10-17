@@ -87,7 +87,7 @@ python -m tennis_control --run run-seed-0 --output reports
 python -m pytest -q
 ```
 
-The score records are included. The audit runs without Torch or Unity. Install the optional agent dependencies for policy inference and export; see below.
+The score records are included. The audit runs without Torch or Unity; the CPU examples above require the agent dependencies.
 
 Each run writes `index.html` and `metrics.json` to the chosen output directory. The JSON records the measured results, input SHA-256 fingerprints, source-code fingerprints, dependency versions and analytical settings. To use the notebooks, install the optional `notebooks` dependencies.
 
