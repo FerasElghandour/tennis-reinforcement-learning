@@ -64,5 +64,4 @@ Results come from one seed and one evaluation sequence. The architecture is shar
 
 ---
 
-**Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)  
-[Attribution and development notes](ATTRIBUTION.md)
+**Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)
