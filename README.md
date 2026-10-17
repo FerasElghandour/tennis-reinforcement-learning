@@ -8,19 +8,24 @@ A two-agent DDPG implementation with saved policies, independently audited score
 
 ## What the evidence shows
 
-The saved policy achieved a **2.067 mean score over 100 evaluation episodes** with learning and exploration disabled. The score audit independently validates the episode definition and the full-window solving criterion.
+The saved policy achieved a **2.067 mean score over 100 historical evaluation episodes**, with learning and exploration disabled. This is the evaluation mean, not the height of the training curve.
+
+The training record contains 875 episodes. Metadata identifies the saved checkpoint at episode 634, where the rolling 100-episode training mean is 0.5338. Training continued afterward and regressed. The two records answer different questions: how learning progressed, and how the saved policy performed under evaluation.
 
 | Measure | Result |
 |---|---|
 | Recorded training episodes | 875 |
 | First qualifying 100-episode window | Ends at episode 607 |
+| Saved checkpoint | Episode 634; rolling training mean 0.5338 |
 | Saved-policy evaluation | 100 episodes; mean score 2.067 |
 | Sequence-level block-bootstrap interval | 1.758–2.349; blocks of ten episodes |
 | Policy interface | 24 input features → 2 bounded continuous actions |
 
 The interactive report includes selectable comparisons, a matching numerical table, CSV/JSON downloads and the reproducibility record. It also works offline: download `docs/index.html` and open it in a browser.
 
-[![Interactive evidence report](assets/report-preview.png)](https://feraselghandour.github.io/tennis-reinforcement-learning/)
+[![Training rolling mean over 875 episodes with saved checkpoint 634 marked, alongside 100 evaluation scores with mean 2.067. Separate axes and scales.](https://feraselghandour.github.io/assets/tennis-results.svg)](https://feraselghandour.github.io/assets/tennis-results.svg)
+
+Training uses a rolling mean; evaluation shows individual episode scores and their mean. The axes have different scales. [Training CSV](run-seed-0/training_scores.csv) · [Evaluation CSV](run-seed-0/evaluation_scores.csv) · [Checkpoint metadata](run-seed-0/training_result.json). Both sequences use the same episode-score definition. One historical training seed does not establish multi-seed reliability.
 
 ## Engineering
 
@@ -66,11 +71,10 @@ The critic uses each agent’s local observation and action. The legacy class na
 
 ## Portfolio
 
-- [Weather-Aware Bike-Share Demand Analysis](https://github.com/FerasElghandour/bikeshare-weather-analysis)
-- [Bike-Share Customer Behavior](https://github.com/FerasElghandour/bikeshare-customer-behavior)
-- [Movie Revenue: Selection, Sensitivity & Uncertainty](https://github.com/FerasElghandour/movie-revenue-analysis)
+[Model training, deep learning and autonomous systems](https://feraselghandour.github.io/#work).
 
 ---
 
 **Feras Elghandour** · [GitHub](https://github.com/FerasElghandour)  
 Data sources and applicable license notices: [DATA.md](DATA.md).
+
