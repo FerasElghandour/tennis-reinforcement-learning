@@ -1,3 +1,13 @@
+# Equal-interaction validation extension
+
+37 tests pass. New TD3 numerical oracles protect the actual learning loss, clipped minimum-Q target, terminal masking, target-action smoothing, delayed actor/target updates, Polyak transfers and detached targets. An isolated min-to-max mutation is rejected by two tests. Synthetic bookkeeping tests reject changed checkpoint selection, NaN scores and missing final evaluation families.
+
+The new result audit covers ten independent trainings (five per method, 40,000 environment steps each), all validation selections and all 2,000 final episodes including controls. The unit of replication is five trained policies per method. Training source and settings were frozen before these runs; final tests opened after both campaigns completed. No final score was used to choose checkpoints or tune parameters. The comparison includes architecture/noise/optimizer differences and remains descriptive.
+
+[Every result and limit](results/robust-v2/RESULTS.md) · [Audit](results/robust-v2/verification.json).
+
+## Preserved earlier validation
+
 # Methods and validation
 
 The 28-test suite covers score identities, truncation-aware windows, block resampling, replay ownership, independent random generators, invalid transitions, mode-preserving inference and exported-policy parity. New numerical oracles check hand-computed DDPG targets, terminal masking, actor gradients, Polyak updates and BatchNorm buffers. Legacy-client checks protect per-instance pipes, bounded waits and complete shutdown. Exploration fixtures check seeded warmup and preservation of the training budget during evaluation.

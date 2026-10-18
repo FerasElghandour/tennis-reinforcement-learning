@@ -1,0 +1,23 @@
+{
+  "name": "tennis-equal-steps-v2",
+  "declared_date": "2026-10-17",
+  "source_base_commit": "560695353c5faa20225ec81ccf2f8aee1d931085",
+  "methods": ["ddpg_exploration", "td3_layernorm"],
+  "training_seeds": [104729, 130363, 155921, 181081, 206369],
+  "environment_steps_per_seed": 40000,
+  "uniform_random_warmup_steps": 2000,
+  "validation_every_steps": 10000,
+  "validation_episodes": 10,
+  "validation_environment_seed_offset": 21000000,
+  "test_environment_seed_offsets": [31000000, 41000000],
+  "test_episodes_per_environment_seed": 50,
+  "max_steps_per_episode": 10000,
+  "selection": "highest mean over the fixed validation episodes, first tie; final tests run only after both method campaigns finish",
+  "primary_outcome": "per-training-seed mean held-out episode score, max of two agent returns; report all five means, median, mean and sample SD",
+  "reliability_rule": "descriptive target: at least four of five trained policies have final-test mean >= 0.5; no population guarantee inferred",
+  "comparison": "equal environment-interaction budgets, not equal compute; full pipeline comparison includes architecture, normalization, noise and optimizer differences",
+  "ddpg_exploration": "released 256/128 BatchNorm actor and local critic, learning rates 0.001, tau 0.01, two updates every two steps; 2000-step uniform warmup then OU sigma 0.3",
+  "td3_layernorm": "256/128 LayerNorm actor and two local critics; learning rates 0.0003, gamma 0.99, tau 0.005, batch 128; one twin-critic update per step after warmup, actor and targets every second update; Gaussian behavior sigma 0.2 and target sigma 0.2 clipped to 0.5",
+  "device": "M2 Max host CPU; official Intel Unity simulator under Rosetta; no paid compute",
+  "interpretation": "Exploratory follow-up motivated by the previous six runs. Settings and source hashes frozen on disk before these new seed campaigns. Five independent training seeds are the unit of replication. Test episodes are nested observations, not 500 independent trainings. New evaluation families remain unopened until training completes. All failures are retained; no claim of inventing TD3 or proving general multi-agent superiority."
+}

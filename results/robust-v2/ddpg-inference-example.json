@@ -1,0 +1,19 @@
+{
+  "method": "ddpg_exploration",
+  "input": "generated zero observations; demonstration only",
+  "observation_shape": [
+    2,
+    24
+  ],
+  "actions": [
+    [
+      -0.9673561453819275,
+      -1.0
+    ],
+    [
+      -0.9673561453819275,
+      -1.0
+    ]
+  ],
+  "bounded": true
+}

@@ -1,0 +1,19 @@
+{
+  "method": "td3_layernorm",
+  "input": "generated zero observations; demonstration only",
+  "observation_shape": [
+    2,
+    24
+  ],
+  "actions": [
+    [
+      -0.9991209506988525,
+      -1.0
+    ],
+    [
+      -0.9991209506988525,
+      -1.0
+    ]
+  ],
+  "bounded": true
+}

@@ -1,0 +1,11 @@
+{
+  "change": "torch.minimum(q1,q2) -> torch.maximum(q1,q2)",
+  "location": "isolated /private/tmp source copy; active training source unchanged",
+  "expected_result": "rejected",
+  "observed_exit_code": 1,
+  "failed_tests": [
+    "test_clipped_twin_target_terminal_mask",
+    "test_learning_loss_uses_the_minimum_target_and_masks_terminals"
+  ],
+  "passing_tests": 3
+}

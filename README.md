@@ -1,31 +1,37 @@
-# Shared-Policy Continuous Control
+# Tennis Policy Training: DDPG and TD3
 
-Train one continuous-control policy for two Tennis players, with a local critic, replay learning and portable saved-policy inference.
+Train shared continuous-control policies, compare their behavior across independent seeds and package selected actors for CPU inference.
 
-[![Quality checks](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml/badge.svg)](https://github.com/FerasElghandour/tennis-reinforcement-learning/actions/workflows/ci.yml)
+## Ten new fixed-budget training runs
 
-## Fresh model training
+Five new seeds per pipeline, **40,000 environment interactions each**. Separate validation selects actors; final tests use 100 episodes per policy/training-seed group across two new environment seeds.
 
-**Six fresh training runs**: three seeds for the released baseline and three for a fixed exploration follow-up, each trained for 1,000 Tennis episodes on the M2 Max. Separate validation chooses checkpoints; final tests use 100 episodes per policy and seed.
+| Pipeline | Mean ± sample SD across five policies | Median policy mean | Mean ≥ 0.5 |
+| --- | ---: | ---: | ---: |
+| DDPG exploration | 1.1008 ± 1.1304 | 0.7344 | 3/5 |
+| TD3 / LayerNorm | 0.6427 ± 1.0881 | 0.0840 | 2/5 |
 
-On the new final-test family, mean scores across three trained policies are **0.7293 exploration**, **0.0056 frozen baseline**, and **0.0197 random**. Exploration's individual means are **2.1878, 0.0000, 0.0000**; it exceeds its matched random baseline in **1/3** seed groups. The exploratory alternative was chosen after baseline failure; three paired seeds are descriptive, and step/compute budgets differ. These results do not establish reliable learning.
+Neither pipeline meets the declared four-of-five criterion for mean score ≥ 0.5.
 
-![All fresh training curves and held-out policy comparisons](results/fresh-v1/training-and-test.png)
+![Every training curve and every final-test seed](results/robust-v2/training-and-final.png)
 
-The included historical saved actor also completed **300 fresh evaluation episodes**, mean **2.1729**, with no truncations. That is one previously trained actor over three new environment sequences, separate from the six fresh training runs.
+[All ten runs, every seed and limits](results/robust-v2/RESULTS.md) · [Frozen settings](ROBUSTNESS_PROTOCOL.json) · [Artifact audit](results/robust-v2/verification.json).
 
-[Results, every seed, raw rollouts and portable actors](results/fresh-v1/RESULTS.md) · [Methods and validation](VALIDATION.md).
+## How the models learn
 
-## Mechanism
+Both players share an actor and replay, with 24-value local observations and two bounded continuous actions. The released DDPG path uses one local critic. The new standard TD3 implementation uses two local critics, a minimum-Q target, target-action smoothing and delayed actor/target updates. Architecture, normalization, noise and compute differ; this is a comparison of complete pipelines.
 
-Both players share one actor, one local critic and one replay buffer. Each player's 24-value observation maps to two bounded actions. Replay minibatches update the critic against detached target-network estimates, then update the actor to maximize the critic estimate. Soft target updates use τ = 0.01.
+```mermaid
+flowchart LR
+ A[Local observations] --> B[Shared actor]
+ B --> C[Two-player simulator]
+ C --> D[Shared replay]
+ D --> E[DDPG critic or TD3 twin critics]
+ E --> F[Actor and target updates]
+ F --> B
+```
 
-<picture>
-  <source media="(max-width: 760px)" srcset="assets/shared-policy-mechanism-mobile.svg">
-  <img src="assets/shared-policy-mechanism.svg" alt="Two players share an actor and local critic. Their transitions enter shared replay; minibatches update critic and actor, followed by soft target updates.">
-</picture>
-
-The critic sees one player's local observation/action pair, not both players' joint state. The legacy `MADDPGAgent` class name does not imply a centralized critic. [Actor/critic](src/tennis_control/model.py) · [Learning and replay](src/tennis_control/maddpg_agent.py) · [Architecture](ARCHITECTURE.md).
+[DDPG source](src/tennis_control/maddpg_agent.py) · [TD3 source and references](src/tennis_control/td3.py) · [Numerical tests](tests/test_td3_oracles.py). Each critic sees one player at a time. The legacy MADDPGAgent name does not imply a centralized critic.
 
 ## Run the saved policy and checks
 
@@ -33,36 +39,26 @@ The critic sees one player's local observation/action pair, not both players' jo
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install -e ".[agent,dev]"
-python examples/policy_demo.py
-python examples/learn_step.py
 python -m pytest -q
-python verify_fresh_results.py --results results/fresh-v1
+python verify_robust_results.py --results results/robust-v2
+python robust_policy.py --method td3_layernorm \
+  --actor results/robust-v2/td3_layernorm/seed-104729/actor.pt
 ```
 
-The policy example uses two **synthetic observation vectors**, shape `[2, 24]`, and returns bounded `[2, 2]` actions. The learning example creates synthetic transitions and exercises actual replay, actor, critic and target updates. Neither example measures Tennis performance. [Observed policy output](examples/policy_demo-output.json) · [Observed learning output](examples/learn_step-output.json).
+The actor demonstration uses generated zero observations, shape `[2,24]`, unless you supply `--observations examples/observations.json`. It returns bounded `[2,2]` actions and does not measure Tennis performance. Select the matching method for each checkpoint. The existing `tennis-policy`, `examples/policy_demo.py` and `examples/learn_step.py` remain demonstrations of the earlier DDPG interface.
 
-For your own valid observations or one of the new actors:
+Full simulation training uses the separate Python 3.11.15 [pinned Mac reference](requirements-reference-macos.txt), the official Intel simulator under Rosetta and the fixed commands in the [result report](results/robust-v2/RESULTS.md#reproduce-and-run-the-saved-actors). No simulator binary is redistributed.
 
-```sh
-tennis-policy --checkpoint results/fresh-v1/exploration/seed-11/actor.pt --observations examples/observations.json
-```
+## Validation and earlier records
 
-Fresh simulator training uses a separate Python 3.11.15 [pinned Mac environment](requirements-reference-macos.txt) and the independently acquired official Intel simulator under Rosetta. [Complete commands, source archives and runtime limits](results/fresh-v1/RESULTS.md) · [Acquisition and source credits](DATA.md). No simulator binary is included.
+**37 tests pass**, including hand-computed learning oracles and tests that reject altered benchmark evidence. An isolated minimum-to-maximum target mutation is caught by two numerical tests. Every final-test episode, actor fingerprint, validation choice and training budget is retained. [Methods and validation](VALIDATION.md).
 
-## Historical training record
+The [earlier six-run study](results/fresh-v1/RESULTS.md) used 1,000 episodes per seed and unequal interaction counts. Its exploratory means were 2.1878, 0, 0. The historical actor’s separate 300 new evaluation episodes averaged 2.1729. The [original interactive report](https://feraselghandour.github.io/tennis-reinforcement-learning/) remains historical; these records are separate from the ten new trainings.
 
-The preserved original run contains 875 episodes. Its first qualifying rolling-100 training window ends at episode 607; saved checkpoint 634 has rolling mean 0.5338. That actor's original 100-episode evaluation mean is 2.067, with learning and exploration disabled. Training continued afterward and regressed. These historical records are separate from the new campaigns above.
-
-[Interactive historical report](https://feraselghandour.github.io/tennis-reinforcement-learning/) · [Training CSV](run-seed-0/training_scores.csv) · [Original evaluation CSV](run-seed-0/evaluation_scores.csv) · [Checkpoint metadata](run-seed-0/training_result.json). The original sequence's block-bootstrap interval is conditional on that sequence, not a guarantee across training seeds.
-
-## Engineering and limits
-
-Replay owns its transition copies; exploration and replay use independent random generators. Inference preserves model mode. Numerical DDPG tests protect targets, terminal masking, actor gradients and target-state transfers. The legacy client has per-instance pipes, bounded waits and explicit shutdown; the earlier native transport failure remains documented.
-
-The new offline result audit checks score identities, complete budgets, validation-only selection and actor fingerprints. Simulation evidence does not establish real-world control or safety. [Model card and export interface](MODEL_CARD.md).
+Five independent trained policies per pipeline remain a small study. The two pipelines differ beyond their critic update, and simulation results do not establish real-world control. [Model interfaces and scope](MODEL_CARD.md) · [Source and simulator credits](DATA.md).
 
 ## Reuse
 
-The original tooling listed in [LICENSING.md](LICENSING.md) is available under [MIT](LICENSE). Upstream Udacity MIT and Unity Apache 2.0 notices remain; simulator, dataset, historical source and checkpoint terms are separate.
+Eligible original additions are covered by the scoped [MIT grant](LICENSING.md). Preserved Udacity MIT and Unity Apache 2.0 notices, simulator terms and separate checkpoint boundaries remain applicable.
 
 [Feras Elghandour — model training, deep learning and autonomous systems](https://feraselghandour.github.io/#work).

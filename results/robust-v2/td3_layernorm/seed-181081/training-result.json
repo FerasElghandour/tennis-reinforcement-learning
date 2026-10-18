@@ -1,0 +1,19 @@
+{
+  "seed": 181081,
+  "method": "td3_layernorm",
+  "environment_steps": 40000,
+  "completed_episodes": 2119,
+  "selected_step": 40000,
+  "validation_mean": 0.07900000121444464,
+  "checkpoint_sha256": "f5e713db2d51ddd7f95316214956883e4b708d75b0edaee0a23d7fc6c7450e3e",
+  "positive_transitions": 397,
+  "transitions": 80000,
+  "clipped_action_fraction": 0.45893125,
+  "actor_parameters": 40066,
+  "last_losses": {
+    "critic1": 1.5517302017542534e-05,
+    "critic2": 1.5674801034037955e-05,
+    "actor_updated": false
+  },
+  "wall_seconds": 215.5223228931427
+}

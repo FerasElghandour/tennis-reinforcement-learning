@@ -1,0 +1,18 @@
+{
+  "seed": 155921,
+  "method": "ddpg_exploration",
+  "environment_steps": 40000,
+  "completed_episodes": 2613,
+  "selected_step": 40000,
+  "validation_mean": 0.06700000111013651,
+  "checkpoint_sha256": "06e85fdb085f4b493959bc1f6f75af3864ef1c02bb0f1b8f14fe252a6d775020",
+  "positive_transitions": 157,
+  "transitions": 80000,
+  "clipped_action_fraction": 0.46858125,
+  "actor_parameters": 40066,
+  "last_losses": {
+    "actor": -0.02637404203414917,
+    "critic": 4.577005165629089e-05
+  },
+  "wall_seconds": 217.6897370815277
+}

@@ -1,15 +1,23 @@
-# Saved control policy
+# Saved control policies
 
 ## Intended use
 
 Simulation-based control experiments and evaluation in the legacy two-agent Tennis environment. This policy is not validated for real-world control or other environments.
 
-## Interface
+## Historical and released DDPG interface
 
 - 24 continuous input features per agent: three stacked local observations.
 - Two continuous actions per agent, bounded to `[-1, 1]`.
 - Shared actor and critic; the critic receives local state/action inputs.
 - Actor architecture: 24 → 256 (BatchNorm/ReLU) → 128 (ReLU) → 2 (tanh).
+
+
+
+## Equal-interaction v2 policies
+
+The new campaign contains five DDPG and five TD3 selected actors. The TD3 actor is 24→256 (LayerNorm/ReLU)→128 (ReLU)→2 (tanh), trained with two local critics. New CLI `robust_policy.py` requires the matching method and a two-player `[2,24]` input. It loads portable CPU state dictionaries using `weights_only=True`; the included zero-input demos are interface examples only. Existing export-parity checks below describe the DDPG path, not a newly tested TD3 graph export.
+
+Validation alone selects each actor. Final evaluation contains 100 episodes per trained policy across two new environment initializations; five training seeds are the replication unit. [All seed returns, training diagnostics and limits](results/robust-v2/RESULTS.md). Eligible original code licensing does not extend the scoped grant to simulator binaries, imported source or checkpoint rights beyond their existing terms.
 
 ## Recorded evaluation
 
